@@ -1,0 +1,277 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>指定カリキュラム54問ドリル</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: single-column phone-first study tool; sticky top bar, tappable answer slabs, fixed bottom action bar during drills */
+:root{
+  --bg:#f4f5f8; --surface:#ffffff; --ink:#1a2233; --muted:#5f6779; --line:#d9dde7;
+  --accent:#2f4fa2; --accent-ink:#ffffff; --accent-soft:#e2e8f7;
+  --ok:#1d7a46; --ok-soft:#e1f3e8; --ng:#b23a2e; --ng-soft:#fbe6e3; --note:#8a5a00; --note-soft:#fff3d6;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+  --f-num:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10131b; --surface:#181d29; --ink:#e4e8f2; --muted:#9aa2b5; --line:#2b3242;
+  --accent:#8fa8ff; --accent-ink:#0c1530; --accent-soft:#1c2747;
+  --ok:#5fd08f; --ok-soft:#15301f; --ng:#ff8a7c; --ng-soft:#3a1d1a; --note:#f2c45a; --note-soft:#332a12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10131b; --surface:#181d29; --ink:#e4e8f2; --muted:#9aa2b5; --line:#2b3242;
+  --accent:#8fa8ff; --accent-ink:#0c1530; --accent-soft:#1c2747;
+  --ok:#5fd08f; --ok-soft:#15301f; --ng:#ff8a7c; --ng-soft:#3a1d1a; --note:#f2c45a; --note-soft:#332a12; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{font-family:var(--f-body);font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:680px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px 120px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+header.top .in{max-width:680px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px;display:flex;align-items:center;gap:12px}
+.brand{font-weight:700;font-size:17px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand small{display:block;font-weight:400;font-size:11px;color:var(--muted);letter-spacing:.04em;line-height:1.2}
+button{font:inherit;color:inherit;cursor:pointer}
+.iconbtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:13px;min-height:36px}
+.iconbtn:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:15px;color:var(--muted);font-weight:700;letter-spacing:.06em;margin-block:24px 10px}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+/* home */
+.summary{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.summary div{min-width:0}
+.summary b{display:block;font-family:var(--f-num);font-size:22px;line-height:1.2}
+.summary span{font-size:12px;color:var(--muted)}
+.bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden;grid-column:1/-1}
+.bar i{display:block;height:100%;background:var(--accent)}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mode{text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;min-height:84px;display:flex;flex-direction:column;gap:4px}
+.mode strong{font-size:15px}
+.mode span{font-size:12px;color:var(--muted);line-height:1.5}
+.mode.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.mode.primary span{color:inherit;opacity:.85}
+.mode:disabled{opacity:.45;cursor:default}
+.chapters{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.chapters li+li{border-top:1px solid var(--line)}
+.chapters button{width:100%;background:none;border:0;text-align:left;padding:12px 14px;display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center}
+.chapters .no{font-family:var(--f-num);color:var(--accent);font-size:14px}
+.chapters .nm{min-width:0;font-size:15px;line-height:1.45}
+.chapters .st{font-size:12px;color:var(--muted);text-align:right;white-space:nowrap}
+.chapters .mini{display:block;height:3px;background:var(--line);border-radius:2px;margin-top:6px;overflow:hidden}
+.chapters .mini i{display:block;height:100%;background:var(--accent)}
+.settings{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px 14px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px;min-height:48px}
+.row+.row{border-top:1px solid var(--line)}
+.row label{flex:1;min-width:0;font-size:15px}
+.row small{display:block;color:var(--muted);font-size:12px;line-height:1.4}
+select,input[type=number]{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:6px 8px;min-height:38px}
+input[type=checkbox]{width:22px;height:22px;accent-color:var(--accent)}
+.jump{display:flex;gap:8px}
+.jump input{width:96px}
+.fine{font-size:12px;color:var(--muted);line-height:1.6;margin-top:24px}
+.danger{color:var(--ng);border-color:var(--ng)}
+/* quiz */
+.qhead{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);margin-top:6px}
+.qhead .pill{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:2px 10px;font-weight:700;white-space:nowrap}
+.qhead .ch{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.progress{height:4px;background:var(--line);border-radius:2px;overflow:hidden;margin-top:8px}
+.progress i{display:block;height:100%;background:var(--accent);transition:width .2s}
+.stem{font-size:18px;font-weight:700;line-height:1.65;margin-block:16px 14px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:13px 14px;min-height:56px;font-size:16px;line-height:1.6}
+.opt .k{font-weight:700;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--bg);font-size:14px}
+.opt span:last-child{min-width:0}
+.opt.ok{border-color:var(--ok);background:var(--ok-soft)}
+.opt.ok .k{background:var(--ok);color:var(--surface)}
+.opt.ng{border-color:var(--ng);background:var(--ng-soft)}
+.opt.ng .k{background:var(--ng);color:var(--surface)}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt:disabled{cursor:default;color:inherit}
+.multi{font-size:13px;color:var(--accent);font-weight:700;margin:-6px 0 10px}
+.verdict{font-weight:700;font-size:17px;margin-top:18px;display:flex;align-items:center;gap:8px}
+.verdict.ok{color:var(--ok)} .verdict.ng{color:var(--ng)}
+.exp{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-top:10px;font-size:15px;line-height:1.8}
+.note{background:var(--note-soft);color:var(--ink);border-left:4px solid var(--note);border-radius:0 var(--r) var(--r) 0;padding:10px 12px;margin-top:10px;font-size:13px;line-height:1.7}
+.note b{color:var(--note)}
+.actionbar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.actionbar .in{max-width:680px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px;display:flex;gap:10px}
+.btn{flex:1;min-height:50px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:16px}
+.btn.main{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);flex:2}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.star[aria-pressed="true"]{background:var(--note-soft);border-color:var(--note);color:var(--note)}
+/* result */
+.score{text-align:center;padding-block:28px 12px}
+.score b{font-family:var(--f-num);font-size:56px;line-height:1;display:block}
+.score span{color:var(--muted)}
+.list{list-style:none;padding:0;margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.list li+li{border-top:1px solid var(--line)}
+.list button{width:100%;text-align:left;background:none;border:0;padding:11px 14px;display:grid;grid-template-columns:20px 58px 1fr;gap:8px;font-size:14px;line-height:1.5}
+.list .m{font-weight:700}
+.list .m.ok{color:var(--ok)} .list .m.ng{color:var(--ng)}
+.list .t{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:999px;font-size:13px;z-index:20}
+.confirm{background:var(--ng-soft);border:1px solid var(--ng);border-radius:var(--r);padding:12px;margin-top:10px;font-size:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+@media (min-width:560px){.modes{grid-template-columns:repeat(3,1fr)}}
+</style>
+
+<header class="top"><div class="in">
+  <div class="brand">指定カリキュラム54問ドリル<small>認定理学療法士 共通カリキュラム対策・誤答問題を除外済み</small></div>
+  <button class="iconbtn" id="homeBtn" type="button" hidden>ホーム</button>
+</div></header>
+<main class="wrap" id="app"></main>
+<div class="actionbar" id="bar" hidden><div class="in" id="barIn"></div></div>
+<div class="toast" id="toast" hidden></div>
+
+<script type="application/json" id="qdata">{"cats": ["医療倫理", "医療安全・質保証", "足病変", "人材・組織マネジメント", "チーム医療・連携・コミュニケーション", "運動制御・運動学習", "臨床推論・EBM・検査", "医療面接・身体診察", "研究・ガイドライン・法令・教育", "感染対策"], "q": [{"c": "医療倫理", "s": "1960年代に医療倫理の流れが大きく変わった医療のトピックスはどれか。", "o": ["少子高齢化", "人工呼吸器の普及", "感染症の流行", "医療の専門分化", "死亡原因疾患の変化"], "a": [1], "e": "1960年代に人工呼吸器などの延命医療技術が普及し、自発呼吸が止まっても心拍を維持できるようになった。これにより「脳死」概念（1968年ハーバード大学基準）が提起され、延命治療の限界・尊厳死・自己決定権などの生命倫理（バイオエシックス）の議論が本格化した。", "t": "", "n": 1}, {"c": "医療倫理", "s": "専門職構築の四原則でないものはどれか。", "o": ["高度な教育水準", "法的・社会的承認", "積極主義", "公共へのサービス", "利他主義"], "a": [2], "e": "専門職構築の四原則は「高度な教育水準」「法的・社会的承認」「利他主義」「公共へのサービス」。積極主義は含まれない。", "t": "", "n": 2}, {"c": "医療倫理", "s": "守秘義務解除の条件でないものはどれか。", "o": ["危害が起こる可能性が考えられる", "第三者への潜在的危害が重大である", "守秘義務解除で危害が回避できる", "危険対象者への保護に他の方法がない", "当事者への害が最小限に抑えられる"], "a": [0], "e": "守秘義務解除の5条件：①第三者への潜在的危害が重大、②危害が起こる可能性が「非常に高い」、③危険対象者の保護に他の方法がない、④解除により危害を回避できる、⑤当事者への害が最小限。単に「可能性が考えられる」程度では解除の条件を満たさない。", "t": "", "n": 3}, {"c": "医療倫理", "s": "倫理の四原則でないものはどれか。", "o": ["自律尊重原則", "他者理解原則", "無危害原則", "善行原則", "正義・公平原則"], "a": [1], "e": "Beauchamp & Childressの四原則は「自律尊重」「無危害」「善行」「正義・公平」。他者理解原則は含まれない。", "t": "", "n": 4}, {"c": "医療倫理", "s": "意思決定モデルの一つであるシェアードディシジョンメイキングは、医師と患者がどのように意思決定をするモデルか。", "o": ["医師が主導で意思決定が行われる", "情報量によって意思決定が行われる", "家族が主導で意思決定が行われる", "協働的に意思決定が行われる", "患者一人で意思決定が行われる"], "a": [3], "e": "SDM（共有意思決定）は、医師がエビデンスと選択肢を示し、患者が価値観・希望を伝え、双方が協働して決定するモデル。医師主導はパターナリズム、患者が単独で決めるのはインフォームド・チョイス。", "t": "", "n": 5}, {"c": "医療安全・質保証", "s": "近代病院を管理するモデルを提示したのは誰か。", "o": ["日野原重明", "マザー・テレサ", "北里柴三郎", "フローレンス・ナイチンゲール", "荻野吟子"], "a": [3], "e": "ナイチンゲールはクリミア戦争での衛生改善を通じて病院建築・換気・日照・給排水などの環境衛生基準を確立し、『病院覚え書』などで近代的な病院管理のモデルを示した。", "t": "原文の選択肢「萩野吟子」は「荻野吟子」の誤記と判断し修正。", "n": 6}, {"c": "医療安全・質保証", "s": "日本における病院管理はどのようにして始まったのか、正しいものを1つ選びなさい。", "o": ["第二次世界大戦後、占領軍（ＧＨＱ）が「医療法」を制定したことから始まった。", "北里柴三郎を学部長として慶応義塾大学部医学科が発足して始まった。", "日野原重明が、聖路加国際病院院長に就任、改革を機に始まった。", "鎌田實が諏訪病院で病院改革を始めたことを機に始まった。", "第二次世界大戦後、占領軍（ＧＨＱ）のマッカーサー元帥が東京帝国大学医学部附属病院（現東大医学部附属病院）を訪問、指示したことから始まった。"], "a": [0], "e": "戦後、GHQ公衆衛生福祉局の指導のもとで1948年に医療法が制定され、病院の定義・開設基準・人員配置・管理者の責務などが法的に整備された。同年には病院管理研修所も開設され、日本の病院管理が本格的に始動した。", "t": "確信度：中。医療法は形式上は日本の国会が制定した法律（GHQの指導下）であり、選択肢の表現はやや不正確。", "n": 7}, {"c": "医療安全・質保証", "s": "医療安全が重要視されるきっかけとなった事件はどれか。", "o": ["都立広尾病院事件（人工呼吸器装置の電源抜去）", "横浜市立大学事件（患者取り違え）", "慶応義塾大学病院（血管内誤注入）", "杏林大学割り箸死事件", "都立駒込病院ペニシリン注射ショック死事故"], "a": [1], "e": "1999年1月の横浜市立大学医学部附属病院の患者取り違え手術事故は社会に大きな衝撃を与え、同年2月の都立広尾病院事件（消毒薬の誤注入）と合わせて1999年は「医療安全元年」と呼ばれる。個人責任の追及から、システムで防ぐ組織的安全管理へ転換する契機となった。", "t": "原文では杏林大学・都立駒込病院の選択肢に説明文が付いていたが、表示上省略。", "n": 8}, {"c": "医療安全・質保証", "s": "医療機関等における医療安全管理体制の研修開催について、間違っているものを1つ選びなさい。", "o": ["研修は、職種横断的に開催されることが求められている。", "研修は、年2回程度の開催を求められている。", "研修は、正職員のみが対象となっている。", "研修は、医療機関としての責務である。", "研修開催の活動記録を残すことも必要である。"], "a": [2], "e": "医療安全研修は、正職員だけでなく非常勤・派遣・委託職員を含む「すべての職員」が対象。職種横断的な開催、年2回程度の定期開催、開催記録の保存も求められる。", "t": "", "n": 9}, {"c": "医療安全・質保証", "s": "情報を明確かつ正確にチームメンバー間でやり取りする構造化されたコミュニケーションとして、間違ったものを1つ選びなさい。", "o": ["SBARで、緊急時の連絡や引き継ぎを的確に実施する。", "重要な伝達や機械的な情報の伝達は、call out（声だし確認）をする。", "伝達を確実にするために、チェックバックで復唱確認をする。", "Handoffで、ケアの引き継ぎの際の情報交換を的確に実施する。", "指摘をして受け入れられなかったら、諦める。"], "a": [4], "e": "TeamSTEPPSでは、安全上の懸念があれば「2チャレンジルール」やCUSを用いて少なくとも2回は主張する。1回で諦めるのは誤り。SBAR・コールアウト・チェックバック・ハンドオフはいずれも構造化コミュニケーションの手法。", "t": "", "n": 10}, {"c": "医療安全・質保証", "s": "質保証に関するBSC（バランスト・スコアカード）の業務プロセスの視点に含まれるものはどれか。", "o": ["人材育成", "収益", "生産性", "顧客満足", "市場開拓"], "a": [2], "e": "BSCの4つの視点：財務（収益など）、顧客（顧客満足・市場開拓など）、業務プロセス（生産性・効率化・事故率低減など）、学習と成長（人材育成など）。", "t": "", "n": 11}, {"c": "医療安全・質保証", "s": "内部質保証の利点として正しいのはどれか。", "o": ["第三者が作業に加わることによってアカウンタビリティが増す", "質改善について、内的モチベーションを持つことが可能になる", "作業負担の多い自己評価作業に取り組むための外圧が得られる", "多様なステークホルダーに対して透明で信頼のある情報を提供できる", "自己評価が単に自己を肯定する結果になることを防ぐことができる"], "a": [1], "e": "内部質保証（自己点検・自己評価）は、構成員が主体的に振り返るため内発的な改善意欲を持ちやすい。他の選択肢（第三者参画による説明責任、外圧、透明性、自己肯定の防止）は外部質保証の利点。", "t": "", "n": 12}, {"c": "医療安全・質保証", "s": "医療安全に関する記述で正しいのはどれか。", "o": ["医療事故はヒヤリ・ハットとも言われる", "医療過誤とは、医療事故発生の原因に医療機関や医療従事者の過失がないものを指す", "インシデントとは、医療事故に至らず医療事故になる恐れのあったものを指す", "インシデント報告の目的は責任の所在を特定、適切に処罰することにある", "1件の重大な事故の背後には29件の軽度の事故があると言われている"], "a": [4], "e": "ハインリッヒの法則（1:29:300）：1件の重大事故の背後に29件の軽微な事故、300件のヒヤリ・ハットがある。ヒヤリ・ハットは事故に至らなかった事例、医療過誤は過失がある医療事故、インシデント報告の目的は処罰ではなく再発防止。", "t": "確信度：中。「インシデント＝医療事故に至らなかったもの」は多くの施設で用いられる定義でもあり、選択肢ウも正解と読める可能性がある（AI解説では、影響レベル3a程度までの軽微な傷害もインシデントに含める施設区分を理由に誤りとしている）。", "n": 13}, {"c": "医療安全・質保証", "s": "医療機器の保守点検について正しいのはどれか。", "o": ["終業時点検では、基本性能や安全確保のための点検を行う", "始業時点検を詳細に実施した場合には、終業時点検を簡略化できる", "使用中点検では、外観点検を行う", "始業時点検では、基本性能、安全装置、警報装置、消耗品の点検を行う", "始業時点検では、安全性劣化や性能等の点検を行う"], "a": [3], "e": "始業時点検（使用前）では外観・基本性能・安全装置・警報装置・消耗品を確認する。終業時点検は清掃・消毒・破損確認・保管/充電など、使用中点検は作動状況・設定値・アラームの確認。安全性劣化や精密な性能点検は定期点検で行う。目的が異なるため、始業時点検を理由に終業時点検を簡略化はできない。", "t": "", "n": 14}, {"c": "足病変", "s": "足部の機能と構造について、誤った内容を一つ選んでください。", "o": ["足部には身体全体の1/4の骨が集中しており複雑に機能している", "足部の剛性や連結性は足根骨周囲の複数の靱帯より構成されている", "糖尿病足病変の評価では神経症状の有無をモノフィラメント検査やIpswichタッチテストで行うことが重要である", "WBIは体重に応じて相対的に筋力を評価する指標であり、歩行レベルに必要な筋力は0.45である", "ABIはレーザードップラー法によって皮膚表面から1～2mm程度の深さにある毛細血管の血流を計測する。50mmHg以下で末梢動脈疾患を疑う"], "a": [4], "e": "選択肢の内容はSPP（皮膚灌流圧）の説明。ABIは足関節収縮期血圧÷上腕収縮期血圧で、正常0.91〜1.40、0.90以下でPADを疑う。足部の骨は片足26個（両足52個）で全身の約1/4。WBIは体重比の膝伸展筋力で、独歩自立の目安は約0.45以上。", "t": "原文の「Ipswitch」「抹消動脈」「身体の容量」は誤記と判断し修正。", "n": 15}, {"c": "足病変", "s": "足病変の病態生理について、誤った内容を一つ選んでください。", "o": ["胼胝・鶏眼は足底面が受ける力が限局的に加わることで形成される", "足底潰瘍を認めても足に痛みがなければ「歩行」を許可しても良い", "足病変を予防する上では、足だけでなく立位や歩行を診ることが重要である", "足関節背屈制限が10度以下の場合、歩行時の最大足底圧が前足部に集中しやすくなる", "下肢動脈狭窄に伴う足潰瘍・足壊疽は足底面ではなく足先端部に発生することが多い"], "a": [1], "e": "神経障害があると足底潰瘍があっても痛みを感じない（無痛性潰瘍）ことが多い。痛みがなくても荷重歩行を続けると創悪化・感染拡大・壊疽につながるため、免荷（オフローディング）が原則。虚血性潰瘍は趾尖部などの末梢に、神経障害性潰瘍は荷重部の足底に多い。", "t": "", "n": 16}, {"c": "足病変", "s": "足病変予防における装具療法について、誤っているものを一つ選んでください。", "o": ["装具療法は運動療法を行う上で足の保護・固定・免荷の役割を担っている", "装具作成は、身体機能・生活能力・社会的背景を勘案して義肢装具士と連携しながら進める", "フェルト作成や靴フィッティングは義肢装具士の独占業務として理学療法士は関わらない", "小切断患者は再切断・潰瘍再形成が懸念されるためフットウェアの導入が望ましい", "フットウェアによる適正荷重は足病を予防し、身体活動さらにQOL向上に繋がる"], "a": [2], "e": "フェルトによる局所除圧や靴のフィッティングは義肢装具士の独占業務ではなく、理学療法士・看護師を含む多職種が関わる介入。小切断後は潰瘍再発・再切断リスクが高く、フットウェア導入が重要。", "t": "", "n": 17}, {"c": "人材・組織マネジメント", "s": "人事労務管理について正しいものを1つ選んでください。", "o": ["人事労務管理の目的は、納得性のある人事評価制度と給与体系が構築され、運用されていることである。", "人事管理と労務管理は、全く異なるマネジメントの方法のことである。", "労務管理は、労働関連法令に基づき、スタッフが安心して働ける職場をつくることであり、人事管理はスタッフを活かし、組織を活性化させることである。", "労務管理は、組織として必ずやらなければならないことであるが、人事管理はやらなくても問題はない。", "人事労務管理では、人材の確保、人材の配置、人材の育成が最も重要である。"], "a": [2], "e": "労務管理は法令・就業規則に基づき安心して働ける職場をつくる「守り」、人事管理は採用・配置・育成・評価で人を活かし組織を活性化する「攻め」。両者は相互補完的で、どちらも不可欠。評価制度や給与体系は目的ではなく手段。", "t": "", "n": 18}, {"c": "人材・組織マネジメント", "s": "人材育成（能力開発）について正しいものを1つ選んでください。", "o": ["医療現場においては、専門職としての能力開発（職能別教育）が最も重要である。", "組織運営に必要な能力開発（職階別教育）は、どの組織でも求められるスキルを学ぶ教育である。", "能力開発は、昨今の労働力人口減少に伴う人材不足から、スタッフ自身の自己責任として取り組むべきことである。", "職場内教育（OJT）は、知識の習得に有効である。", "自己啓発（SD）は、雇用する側がその機会を提供すべきである。"], "a": [1], "e": "職階別（階層別）教育は、各職階に共通して求められる役割意識・マネジメント・リーダーシップなど、どの組織でも必要なスキルを学ぶ教育。OJTは実践的技能の習得に、体系的な知識の習得にはOff-JTが向く。SDは本人が自発的に行うもので、組織は支援・環境整備を担う。", "t": "", "n": 19}, {"c": "チーム医療・連携・コミュニケーション", "s": "チームづくり、職場でのコミュニケーションについて正しいものを1つ選んでください。", "o": ["職場コミュニケーションを円滑に進めるポイントは、①自分の意思を伝え、②伝えたことを理解してもらい、③理解したことに対する反対意見を相手が述べてくれるかである。", "職場コミュニケーションは、一方が気遣いの言葉など分かってもらう努力をすればうまくいく。", "チームがまとまる3つの条件とは、①チームの方針が示されている、②協力する体制ができている、③メンバー同士が仲がよいことである。", "チームで動くメリットは、協力できる、複数の意見やアイデアが出る、メンバー同士が助け合う、共感できる、大きなことに取り組めるなどのメリットがある。", "チームワークをよくするためには、非言語コミュニケーションのうち聴覚情報（声のトーンや大きさ、話す速さなど）が最も影響度が高い。"], "a": [3], "e": "チームで動く利点は、協力・多様な意見・助け合い・共感・大きな課題への挑戦。コミュニケーションは双方向で、③は「相手が納得し行動してくれるか」。チーム成立の条件は共通目的・協働意欲・意思疎通（バーナード）で、仲の良さではない。メラビアンの法則で影響が最も大きいのは視覚情報（55%）。", "t": "", "n": 20}, {"c": "運動制御・運動学習", "s": "運動制御について正しいものはどれか。2つ選びなさい。", "o": ["ベルンシュタイン問題とは自由度の冗長性を指す。", "シナジーによってベルンシュタイン問題は解決される。", "筋肉は常に変化しないばね特性を保っている。", "筋肉の長さ張力曲線の傾きをスティフネスと呼ぶ。", "仮想軌道制御仮説では複雑な軌道計算を前提とする。"], "a": [0, 3], "e": "ベルンシュタイン問題は、多数の関節・筋による自由度の冗長性をどう制御するかという問題。スティフネスは長さ変化に対する張力変化の割合（長さ-張力曲線の傾き）。筋シナジーは自由度を低次元化する戦略だが冗長性そのものを解消するわけではない。筋のばね特性は神経活動で変化する。仮想軌道制御（平衡点）仮説は複雑な軌道計算を不要とする仮説。", "t": "", "n": 21}, {"c": "運動制御・運動学習", "s": "小脳の内部モデルによる教師あり学習について正しいものはどれか。2つ選びなさい。", "o": ["フィードバック情報によって運動を逐次修正する。", "小脳はフィードフォワード運動指令を出力する。", "運動時間の長い複合的な運動の学習に利用される。", "なめらかで熟練した運動の学習に役立っている。", "異なる運動毎に内部モデルを学習し直す必要はない。"], "a": [1, 3], "e": "小脳の内部モデルは、感覚フィードバックの遅れを待たずにフィードフォワード指令を出力し、なめらかで熟練した運動を可能にする。誤差信号（登上線維）は次回の指令修正に使われ、逐次修正はフィードバック制御の特徴。速い運動で特に有効で、運動や環境ごとに内部モデルの学習が必要。", "t": "", "n": 22}, {"c": "運動制御・運動学習", "s": "強化学習について正しいものはどれか。2つ選びなさい。", "o": ["行動した直後の報酬だけで運動学習が進行する。", "運動途中の正確なフィードバックが重要である。", "最適な運動を探索によって学習する。", "報酬の予測は強化学習には無関係である。", "運動後に達成感を得られるよう難易度設定を行う。"], "a": [2, 4], "e": "強化学習（大脳基底核・ドーパミン系）は試行錯誤の探索で報酬が最大となる運動を学習する。臨床では達成感（報酬）が得られる難易度設定が重要。中核は報酬予測誤差で、将来・遅延報酬も学習に関わる。運動途中の誤差フィードバックは小脳の教師あり学習の特徴。", "t": "", "n": 23}, {"c": "運動制御・運動学習", "s": "運動学習の転移について正しいものはどれか。2つ選びなさい。", "o": ["療法室の均一な環境での動作の繰り返しが重要である。", "学習により改善した機能を日常生活で活かす概念である。", "退院後の在宅での日常生活動作には関係がない。", "ＣＩ療法の中にパッケージとして組み込まれている。", "主に代償動作による日常生活の改善を目的とする。"], "a": [1, 3], "e": "転移とは、練習で獲得・改善した機能を別の状況や実生活（ADL）で発揮すること。CI療法には生活への転移を促す「トランスファー・パッケージ」（行動契約・日誌・MALによる自己モニタリング）が組み込まれている。転移には均一な環境より多様な文脈での練習が有効。", "t": "", "n": 24}, {"c": "運動制御・運動学習", "s": "運動学習理論の臨床応用について正しいものはどれか。2つ選びなさい。", "o": ["仮想軌道制御仮説は否定されたので臨床には役立たない。", "長下肢装具をカットダウンすることは難易度の調整にあたる。", "基礎研究を臨床応用するには慎重な研究の積み重ねが必須である。", "運動学習理論は認知系のリハビリテーションには応用できない。", "過剰努力はスティフネスを高めるので絶対に避けるべきである。"], "a": [1, 2], "e": "KAFOからAFOへのカットダウンは、制御すべき自由度を増やす課題難易度の段階的調整にあたる。基礎研究の臨床応用には慎重な検証の積み重ねが必要。運動学習理論は高次脳機能障害のリハにも応用される。過剰努力による共収縮は学習初期の適応的戦略の面もあり、一律に禁止するものではない。", "t": "", "n": 25}, {"c": "チーム医療・連携・コミュニケーション", "s": "チーム医療について、誤っているものを1つ選択してください。", "o": ["医療に対する要求水準の変化に対応するアウトカム志向がチーム医療推進の背景にある。", "チーム医療には対象者の生活を考慮した対応が求められている。", "効率化によって医療の質の向上と医療提供者の負担軽減の双方を図る。", "カンファレンスは情報共有とチームマネジメントを図るうえで重要となる。", "チーム医療を標準化するために、診療ガイドラインに従うことが重要となる。"], "a": [4], "e": "チーム医療の本質は、患者の病態・価値観・生活背景に合わせて多職種が協働すること。診療ガイドラインは参考指標であり、画一的に従うことでチーム医療を標準化するという考え方は不適切。アウトカム志向、生活への配慮、質向上と負担軽減の両立、カンファレンスの重要性は正しい。", "t": "", "n": 26}, {"c": "臨床推論・EBM・検査", "s": "臨床疫学およびEBMについて、誤っているものを1つ選択してください。", "o": ["臨床疫学は診断や治療に関するデータの有効性や安全性を科学的に評価するもので、EBMの基盤となる。", "疫学研究における観察研究では、ランダム化比較試験（RCT）の方が非ランダム化比較試験（非RCT）よりもエビデンスレベルが高い。", "疫学研究ではビッグデータから付加価値をいかに導くかが重要となる。", "EBMでは患者の意思決定を支援するために現時点での最良の根拠を提示する。", "EBMのステップにおいて、得られた情報はその妥当性や重要性などを批判的に吟味され、患者への適応が検討される。"], "a": [1], "e": "RCTと非RCTは「介入研究」であり観察研究ではない（観察研究はコホート・症例対照・横断研究など）。介入研究内でRCTが非RCTよりエビデンスレベルが高いこと自体は正しい。EBMの5ステップ：疑問の定式化→情報検索→批判的吟味→患者への適用→評価。", "t": "", "n": 27}, {"c": "臨床推論・EBM・検査", "s": "臨床推論について、誤っているものを1つ選択してください。", "o": ["臨床推論では、エビデンスを活用した障害や症状の分析にもとづき、仮説を形成（設定）する。", "臨床推論における情報分析や仮説では、バイアスの影響を除外するためにメタ認知によるセルフモニタリングが必要となる。", "バイアスの一つであるアベイラビリティ（availability）は直近の経験や記憶に影響されるものである。", "過去の経験との関連に基づいて行われる仮説演繹の特徴は判断が素早く行われることである。", "理学療法における臨床推論では、動作の観察・分析に基づいて障害構造を明確にし、問題点や課題を整理する。"], "a": [3], "e": "過去の経験に基づき素早く判断するのはパターン認識（非分析的推論、System 1）の特徴。仮説演繹法は複数の仮説を立てて検査で検証・棄却する分析的推論（System 2）で、時間と認知負荷がかかる。", "t": "", "n": 28}, {"c": "臨床推論・EBM・検査", "s": "検査項目と病態の把握について、誤っているものを1つ選択してください。", "o": ["HbA1c（ヘモグロビンA1c）の高値（6.5％以上）は糖尿病を示唆し、直近1週間の平均的な血糖値を表す。", "eGFR（推算糸球体濾過量）が基準値未満である場合、腎機能低下や腎不全を疑う。", "BNP（脳性ナトリウム利尿ペプチド）の異常値では心不全などによる心負荷の増大を疑う。", "血中総タンパクが異常な低値となった場合、低栄養を疑う。", "CRP（C反応性タンパク）が異常な高値を示した場合、炎症や組織障害の存在を疑う。"], "a": [0], "e": "HbA1cは赤血球寿命（約120日）を反映し、過去1〜2か月の平均血糖を表す。「直近1週間」ではない。6.5%以上は糖尿病診断基準の一つ。", "t": "", "n": 29}, {"c": "臨床推論・EBM・検査", "s": "画像検査について、誤っているものを1つ選択してください。", "o": ["単純X線による骨撮影では骨折や炎症および腫瘍の有無、組織の修復状態を把握することができる。", "CTではX線の高吸収部分が白色で画像化され、病変の部位や範囲を把握することができる。", "MRIのT2強調画像では、水を高信号（白色）として画像化するため、病変部位を明瞭にとらえやすい特徴がある。", "MRIのFLAIR画像は、血流や血管構造をとらえやすい特徴をもつ。", "CT画像やMRI画像で病変部位およびその周囲組織の病態を把握することにより、回復の可能性や予後予測を考慮して理学療法プログラムを立案する。"], "a": [3], "e": "FLAIRはT2強調画像の変法で、脳脊髄液の信号を抑制（低信号）し、脳室周囲の病変（浮腫・脱髄・梗塞など）を高信号として検出しやすくする。血流・血管構造の描出はMRA（TOF法など）。", "t": "", "n": 30}, {"c": "医療面接・身体診察", "s": "医療面接における質問法で正しいのはどれか。", "o": ["自由質問法は、医療者が知りたいことを自由に尋ねる質問法である。", "中立的質問法は、医師と患者との中立的な立場で質問する質問法である。", "直接質問法は患者が自分の意見を言えないので、医療面接では用いるべきではない。", "多項目質問法は、患者に同時に複数の質問をするための質問法である。", "医療面接の前半部分では、自由質問法などの自由度の大きい質問法を積極的に用いる。"], "a": [4], "e": "医療面接は開かれた質問から閉ざされた質問へ進める（漏斗法）。自由質問法は患者が自由に答えられる質問、中立的質問法は誘導しない表現で尋ねる質問。直接質問法は情報の絞り込みに必要。多項目（複数）質問は患者を混乱させるため避ける。", "t": "", "n": 31}, {"c": "医療面接・身体診察", "s": "医療面接における解釈モデルについて正しいのはどれか。", "o": ["医療者の鑑別診断についての解釈をモデル化したものである。", "医学的に正しくない場合には、あまり注目する必要はない。", "解釈モデルの把握は、患者満足度に大きく影響する。", "医療者が推測するもので、患者に直接尋ねるものではない。", "患者の受療行動とは関連しないことが多い。"], "a": [2], "e": "解釈モデル（Kleinman）は、患者自身が病気の原因・意味・予後・治療をどう捉えているかという枠組み。把握して対話することが信頼関係・納得感・患者満足度・アドヒアランスに直結する。医学的に誤っていても傾聴し、患者に直接尋ねて確認する。受療行動に強く影響する。", "t": "", "n": 32}, {"c": "医療面接・身体診察", "s": "症状の発症・経過と疾患の組み合わせで正しいのはどれか。", "o": ["年単位で進行する：悪性腫瘍", "月単位で進行する：細菌感染症", "日単位で進行する：変性疾患", "突然発症し、持続する：大動脈解離", "時間単位で反復する：虫垂炎"], "a": [3], "e": "突然発症して持続するのは血管性病変の典型（大動脈解離、くも膜下出血など）。悪性腫瘍は週〜月単位、細菌感染症は時間〜日単位、変性疾患は年単位で進行する。虫垂炎は時間〜日単位で段階的に増悪し、反復はしない。", "t": "", "n": 33}, {"c": "医療面接・身体診察", "s": "身体診察時の配慮について、誤っているのはどれか。", "o": ["患者のプライバシーには十分配慮する。", "診察の前に、なぜその診察を行うのかをきちんと説明する。", "診察を行う必要性について、わかりやすく説明する。", "患者の肌に触れる前に、手や聴診器を温めておく。", "患者が痛みを訴える場所は、最初に時間をかけて丁寧に診察する。"], "a": [4], "e": "疼痛部位は最後に診察するのが原則。最初に触れると疼痛や筋性防御が誘発され、その後の診察が困難になり、患者の不安も高まる。", "t": "", "n": 34}, {"c": "臨床推論・EBM・検査", "s": "疑問の定式化におけるPICO、PECOについて、誤っているものを一つ選びなさい。", "o": ["あいまいな疑問を構造化する際に、疑問の構成要素のそれぞれの頭文字をとって表したものである", "Pは、PatientまたはProblemの頭文字である", "Iは、InterventionまたはExposureの頭文字である", "Cは、Challengeの頭文字である", "Oは、Outcomeの頭文字である"], "a": [3], "e": "P：Patient/Problem/Population、I/E：Intervention/Exposure、C：Comparison（Control）、O：Outcome。CはChallengeではない。", "t": "", "n": 35}, {"c": "研究・ガイドライン・法令・教育", "s": "IMRAD（イムラッド）と呼ばれる論文の構成について、誤っているものを一つ選びなさい。", "o": ["序論", "方法", "結果", "考察", "脚注"], "a": [4], "e": "IMRADはIntroduction（序論）、Methods（方法）、Results（結果）、and、Discussion（考察）の頭文字。脚注は含まれない。", "t": "", "n": 36}, {"c": "研究・ガイドライン・法令・教育", "s": "理学療法診療ガイドラインについて、誤っているものを一つ選びなさい。", "o": ["医師や理学療法士と患者が、適切な臨床判断をできるよう支援することを目的としている", "推奨される理学療法は、すべての患者に必ず適用しなければならない", "理学療法士の能力、現場の環境などを含めて総合的に判断する", "強く推奨される理学療法であっても、必要な機器がなかったり、理学療法士自身の技術が対応できない場合もある", "ガイドラインは患者の価値観や希望、コスト面についても提示しており、それらの情報を含めて総合的に意思決定を図ることが必要である"], "a": [1], "e": "診療ガイドラインは臨床判断を支援する標準的推奨であり、強制的な規則ではない。患者の病態・価値観、設備、セラピストの技能などを踏まえて総合的に適用を判断する。", "t": "", "n": 37}, {"c": "研究・ガイドライン・法令・教育", "s": "臨床実習において学生が実施できる行為について、誤っているものを一つ選びなさい。", "o": ["あらかじめ患者に同意を得た上で実施する", "臨床実習指導者の指導・監督の下、実施する", "事前に養成施設と臨床実習施設において侵襲性がそれほど高くないと判断した行為について実施する", "喀痰吸引など侵襲性が高いと判断された場合、見学も実施できない", "臨床実習前に実習生の技術等に関して実技試験等による評価を行い、直接患者に接するに当たり、総合的知識及び基本的技能・態度を備えていることを確認する"], "a": [3], "e": "侵襲性の高い行為は学生の実施が制限されるが、見学まで禁止されるわけではない。患者の同意、指導者の指導・監督、養成校と実習施設の事前合意、実習前の実技試験等による確認は正しい。", "t": "", "n": 38}, {"c": "研究・ガイドライン・法令・教育", "s": "法令に含まれるものについて、誤っているものを一つ選びなさい。", "o": ["憲法", "法律", "政令", "省令", "通知"], "a": [4], "e": "法令は憲法・法律・政令・省令など法規範性をもつもの。通知は行政機関内部の取扱基準・解釈を示すもので、国民への直接的な法的拘束力がなく法令に含まれない。", "t": "", "n": 39}, {"c": "チーム医療・連携・コミュニケーション", "s": "コンサルテーションについて、間違っているものを選んでください。", "o": ["コンサルタントとコンサルティとの間で問題や課題を解決する過程のことである", "同職種で行い、上下関係が成り立つ", "互いに援助の在り方について連携・協力する行為のひとつ", "問題の明確化と問題解決に向かう対等な相互関係", "コンサルティ自身がコンサルテーションの技能を習得できるように支援を行う"], "a": [1], "e": "コンサルテーションは対等な専門職同士の関係で、異職種間でも行われる。同職種内で上下関係に基づいて行う指導はスーパービジョン。", "t": "", "n": 40}, {"c": "チーム医療・連携・コミュニケーション", "s": "コンサルテーションの4分類（A-1．クライエント中心の（ア）コンサルテーション、A-2．（イ）中心の事例コンサルテーション、B-1．（ウ）中心の管理コンサルテーション、B-2．コンサルティ中心の（エ）コンサルテーション）で、カッコに入る単語の組み合わせとして正しいものはどれか。", "o": ["（ア）事例－（イ）コンサルティ－（ウ）クライエント－（エ）管理", "（ア）管理－（イ）コンサルティ－（ウ）プログラム－（エ）管理", "（ア）事例－（イ）コンサルティ－（ウ）プログラム－（エ）管理", "（ア）事例－（イ）プログラム－（ウ）クライエント－（エ）管理", "（ア）事例－（イ）プログラム－（ウ）プログラム－（エ）管理"], "a": [2], "e": "Caplanの4類型：クライエント中心の事例コンサルテーション、コンサルティ中心の事例コンサルテーション、プログラム中心の管理コンサルテーション、コンサルティ中心の管理コンサルテーション。", "t": "", "n": 41}, {"c": "チーム医療・連携・コミュニケーション", "s": "H.S.サリヴァンが提唱した「対人関係論」について、間違っている文章を選んでください。", "o": ["発達に伴い関わった主要な保護者、友人などとの交流が、発達に影響を及ぼすという考え方である", "プロトタクシスとは幼児的・対人的な体験様式", "パラタクシスとは象徴を用いて体験世界を連続性のあるものとして組織化する段階にある体験様式", "シンタクシスとは適応的・現実的な体験様式", "人間は対人関係によって目的や行動が変わり、それらを観察することによって人間性を理解することができる"], "a": [1], "e": "プロトタクシスは乳児期最早期の原始的・未分化な体験様式で、自己と他者の区別がなく「対人的」ではない。パラタクシスは象徴を用いて体験をつなげ始める段階（論理的一貫性はまだ不十分）、シンタクシスは共有された記号で他者と共通理解できる成熟した様式。", "t": "確信度：中。パラタクシスの定義文は出典により表現が異なり、紛らわしい。", "n": 42}, {"c": "チーム医療・連携・コミュニケーション", "s": "コミュニケーションの4つのスキル（言語の伝える力・聴く力、非言語の伝える力・読み解く力）についての説明で、間違っているものを選んでください。", "o": ["言語の伝える力とは相手に分かりやすく自分の言いたいことを伝える力のこと", "言語の聴く力とは相手の話の先回りをしてさえぎること", "言語の聴く力には相手の伝えたいことを最後までしっかりと聴く態度が重要", "非言語の伝える力とは目の動き、表情、声のトーン、身振り手振りのこと", "非言語の読み解く力は感情や言葉の裏に隠された本当の思いをくみ取る力のこと"], "a": [1], "e": "話の先回りや遮りは傾聴を妨げる不適切な態度。言語の聴く力は、相手の言葉を最後まで遮らずに受容・確認しながら聴く力。", "t": "", "n": 43}, {"c": "研究・ガイドライン・法令・教育", "s": "生涯教育及び生涯学習について、間違っているものを選んでください。", "o": ["生涯教育とは人々の生涯にわたる学習を支える教育構造（制度、行・財政、教育内容など総合的編成）全般の働きをいう", "生涯教育は学習者の「自己教育」を支援し「教育制度の改革」と「学習環境の整備」を強調する概念である", "生涯学習とは、「学習者の自立性・自発性」や「学習者の意欲」を強調する概念である", "1965年にユニセフが国際教育行政の視野で新しい角度から定義づけ、生涯教育は生涯学習を保障するものとした", "現行の教育制度を再編成すること及び教育制度の範囲外の教育におけるすべての可能性を発展させることの双方を目的とする総合的な体系をいう。"], "a": [3], "e": "1965年に生涯教育を提唱したのはユニセフではなくユネスコ（成人教育推進国際委員会でのポール・ラングランの提唱）。", "t": "", "n": 44}, {"c": "研究・ガイドライン・法令・教育", "s": "第二次世界大戦以前に身分法のあった医療専門職種として、誤っているのはどれか。", "o": ["医師", "歯科医師", "看護師", "診療エックス線技師", "薬剤師"], "a": [3], "e": "診療エックス線技師法は戦後の1951年制定（現在の診療放射線技師法）。医師法・歯科医師法は1906年、看護婦規則は1915年、薬剤師法は1925年。", "t": "", "n": 45}, {"c": "チーム医療・連携・コミュニケーション", "s": "理学療法士が喀痰吸引を実施できることになったのは、厚生労働省が設置したどの会議によるものか。", "o": ["チーム医療の推進に関する検討会", "チーム医療推進会議", "チーム医療推進のための看護業務検討ＷＧ", "チーム医療推進方策検討ＷＧ", "社会保障制度国民会議"], "a": [0], "e": "2010年3月の「チーム医療の推進に関する検討会」報告書を受け、同年4月30日の医政局長通知「医療スタッフの協働・連携によるチーム医療の推進について」で、PT・OT・STによる喀痰等の吸引が各業務に含まれる行為として位置づけられた。", "t": "", "n": 46}, {"c": "チーム医療・連携・コミュニケーション", "s": "日本理学療法士協会がチーム医療推進に関して提出した要望（理学療法の対象に「身体に障害のおそれのある者」を追加）で、具体的な場面として提示した内容として誤っているのはどれか。", "o": ["理学療法士の国家試験には生活習慣病等の予防的な理学療法に関する設問がある。", "糖尿病や高血圧等の生活習慣病に対する運動療法のエビデンスが明確に示されていない。", "転倒予防には身体的・環境的・心理的な取り組みが必要である。なかでも運動器に関する評価と運動療法の実施には理学療法士が深くかかわってきた。", "身体に障害のないものに理学療法を提供する場合に常に「医師の指示」が課題になる。", "地域包括ケアシステムにおける「自助」を効率的かつ効果的に遂行するために上記法律改定が必要である。"], "a": [1], "e": "協会は「生活習慣病に対する運動療法のエビデンスは明確に示されている」ことを根拠として挙げた。「示されていない」は逆。", "t": "", "n": 47}, {"c": "チーム医療・連携・コミュニケーション", "s": "回復期リハビリテーションチームにおける職種と役割のうち、適切でないものはどれか。", "o": ["薬剤師が、入院時使用薬剤の情報収集を行い、医師、看護師などに情報提供を行う。", "介護福祉士が、日常生活支援と共に家族の介護指導を行う。", "病棟専従医師が、チームリーダーとなる。", "社会福祉士が、家族、スタッフ、患者を地域生活などとつなぐ役割を担う。", "歯科衛生士が、歯科的治療を行う。"], "a": [4], "e": "歯科衛生士の業務は歯科予防処置・歯科保健指導・歯科診療の補助で、歯科的治療は歯科医師のみが行える。", "t": "", "n": 48}, {"c": "チーム医療・連携・コミュニケーション", "s": "チーム医療推進協議会が掲げるチーム医療の理念のうち、誤っているものはどれか。", "o": ["高いレベルの専門性の推進", "職域の拡大", "患者中心の医療の推進", "情報共有の推進", "チーム医療の推進"], "a": [1], "e": "チーム医療推進協議会の理念は「患者中心の医療の推進」「高いレベルの専門性の推進」「情報共有の推進」「チーム医療の推進」の4つ。職域の拡大は含まれない。", "t": "", "n": 49}, {"c": "感染対策", "s": "院内感染（医療関連感染）について正しいものを選んでください。", "o": ["院内感染とは、医療機関等における入院時に患者が持ち込んで来た感染である。", "院内感染の定義に、同一施設の医療従事者等同士がうつしあったものは含まれない。", "医療機関において、患者が原疾患とは別に新たに罹患した感染症である。", "入院後、48時間以内に発生した感染症は、院内感染である。", "しばしば市中感染と同じ意味で使われることがある。"], "a": [2], "e": "院内感染は、医療機関で患者が原疾患とは別に新たに罹患した感染症。医療従事者が院内で罹患したものも含む。入院時に持ち込んだもの・入院後48時間以内の発症は市中感染とみなされる。市中感染とは対比される概念。", "t": "", "n": 50}, {"c": "感染対策", "s": "CDCガイドライン2007で挙げられた標準予防策（SP）の具体策として、適切でない項目を選んでください。", "o": ["適切な手指衛生", "個人防護具", "咳エチケット", "汚染リネンの取り扱い", "リモート（遠隔）面会"], "a": [4], "e": "CDC 2007の標準予防策：手指衛生、PPE、呼吸器衛生/咳エチケット、患者配置、器具・機器の取り扱い、環境管理、リネンの取り扱い、安全な注射手技、腰椎穿刺時のマスク着用。リモート面会は含まれない。", "t": "", "n": 51}, {"c": "感染対策", "s": "新型コロナウイルス感染症（COVID-19）について、適切でない項目を選んでください。", "o": ["感染経路別予防策は、接触予防策＋飛沫予防策＋エアロゾル対策である。", "潜伏期は1～14日で、曝露から5日ほどで発症することが多い。", "N95マスク＋ガウン＋手袋＋キャップ＋ゴーグル等での対応が基本となる。", "アルコール消毒は無効である。", "エアロゾルは、換気の悪い空間などの条件下で、小さな粒子が3時間くらい漂う。"], "a": [3], "e": "SARS-CoV-2はエンベロープウイルスで、70〜80%エタノールや次亜塩素酸ナトリウムが有効。アルコールが効きにくいのはノロウイルスなどのノンエンベロープウイルス。", "t": "", "n": 52}, {"c": "感染対策", "s": "感染対策の手技について、適切でない項目を選んでください。", "o": ["流水、石鹸での手洗いにおいては、手首までしっかりと洗う。", "嘔吐物を処理する際は、PPEを装着する。", "手袋を外すときは、裏返さないように丁寧に外す。", "サージカルマスクは鼻から顎までしっかりと覆うように装着する。", "ガウン・エプロンを脱ぐときは初めに首から引きちぎりながら静かに脱いでいく。"], "a": [2], "e": "手袋は汚染面に素手が触れないよう、裏返しながら外すのが正しい。裏返さずに外すと汚染が手指や周囲に広がる。", "t": "", "n": 53}, {"c": "感染対策", "s": "感染対策について、正しい項目を選んでください。", "o": ["訪問リハビリテーション実施前に手指衛生を行ったが、退去時は相手の気持ちに配慮して行わなかった。", "嘔吐物処理を行う際、ノロかどうか判別がつかないので100ppm次亜塩素酸ナトリウム水溶液で処理をおこなった。", "実習生に手指衛生を指導する必要はない。", "在宅訪問の前に自分の体温を計ったら38度あったが、その他の症状がなかったのでマスクと手指衛生を徹底してクライアントにリハビリテーションを実施した。", "飛沫は、1～1.5mの範囲に落下する。"], "a": [4], "e": "飛沫（5µm以上）は重いため通常1〜1.5m（最大2m程度）の範囲に落下する。手指衛生は退去時にも必須。ノロウイルスが否定できない嘔吐物は0.1%（1,000ppm）次亜塩素酸ナトリウムで処理する（100ppmでは不十分）。発熱時は訪問を中止して報告する。", "t": "", "n": 54}]}</script>
+<script>
+(function(){
+const DATA=JSON.parse(document.getElementById('qdata').textContent);
+const CH=DATA.cats;
+const Q=DATA.q.map(q=>Object.assign({},q,{c:CH.indexOf(q.c)}));
+const KANA=["ア","イ","ウ","エ","オ"];
+const TOTAL=Q.length;
+const isOk=(q,p)=>Array.isArray(p)&&p.length===q.a.length&&q.a.every(x=>p.indexOf(x)>=0);
+const byN={};Q.forEach(q=>byN[q.n]=q);
+const KEY="pt-curriculum54-v1";
+let S={rec:{},star:{},set:{shuffle:true,instant:true}};
+function load(){try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);S.rec=o.rec||{};S.star=o.star||{};S.set=Object.assign(S.set,o.set||{});}}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+load();
+const $=id=>document.getElementById(id);
+const app=$('app'),bar=$('bar'),barIn=$('barIn'),homeBtn=$('homeBtn');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toast(t){const el=$('toast');el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,1600);}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+// rec[n] = {c: correct count, w: wrong count, last: 1|0}
+function stats(list){let done=0,ok=0;list.forEach(q=>{const r=S.rec[q.n];if(r){done++;if(r.last)ok++;}});return{done,ok,total:list.length};}
+const wrongList=()=>Q.filter(q=>S.rec[q.n]&&!S.rec[q.n].last);
+const starList=()=>Q.filter(q=>S.star[q.n]);
+const noteList=()=>Q.filter(q=>q.t);
+const unseen=()=>Q.filter(q=>!S.rec[q.n]);
+
+let run=null; // {items:[n], i, ans:{n:{pick,correct}}, order:{n:[idx]}, title, exam}
+
+function home(){
+  run=null;bar.hidden=true;homeBtn.hidden=true;window.scrollTo(0,0);
+  const st=stats(Q);const rate=st.done?Math.round(st.ok/st.done*100):0;
+  const w=wrongList().length,s=starList().length,u=unseen().length;
+  let h=`<div class="summary">
+    <div><b>${st.done}<span class="num" style="font-size:13px">/${TOTAL}</span></b><span>解答済み</span></div>
+    <div><b>${rate}%</b><span>直近正答率</span></div>
+    <div><b>${w}</b><span>要復習</span></div>
+    <div class="bar"><i style="width:${st.done/TOTAL*100}%"></i></div></div>
+  <h2>学習モード</h2><div class="modes">
+    <button class="mode primary" type="button" data-m="rand10"><strong>ランダム10問</strong><span>全範囲からすき間時間に</span></button>
+    <button class="mode" type="button" data-m="unseen" ${u?'':'disabled'}><strong>未解答から20問</strong><span>残り ${u}問</span></button>
+    <button class="mode" type="button" data-m="wrong" ${w?'':'disabled'}><strong>間違えた問題</strong><span>${w}問・正解するまで残ります</span></button>
+    <button class="mode" type="button" data-m="star" ${s?'':'disabled'}><strong>ブックマーク</strong><span>${s}問</span></button>
+    <button class="mode" type="button" data-m="exam"><strong>模擬テスト 20問</strong><span>全分野からランダム・最後に採点</span></button>
+    <button class="mode" type="button" data-m="notes"><strong>注記のある問題</strong><span>${noteList().length}問・表記修正や確信度の低い問題</span></button>
+  </div>
+  <h2>分野別に解く</h2><ul class="chapters">`;
+  CH.forEach((c,i)=>{const l=Q.filter(q=>q.c===i);const t=stats(l);
+    h+=`<li><button type="button" data-ch="${i}"><span class="no">${String(i+1).padStart(2,'0')}</span><span class="nm">${esc(c)}<span class="mini"><i style="width:${t.done/l.length*100}%"></i></span></span><span class="st num">${t.done}/${l.length}<br>${t.done?Math.round(t.ok/t.done*100)+'%':'—'}</span></button></li>`;});
+  h+=`</ul><h2>設定</h2><div class="settings">
+    <div class="row"><label for="setShuffle">選択肢の順番を入れ替える<small>位置で答えを覚えないためにオン推奨</small></label><input type="checkbox" id="setShuffle" ${S.set.shuffle?'checked':''}></div>
+    <div class="row"><label for="chOrder">分野別の出題順</label><select id="chOrder"><option value="seq">問題番号順</option><option value="rand">ランダム</option></select></div>
+    <div class="row"><label for="jumpN">問題番号で開く<small>1〜${TOTAL}</small></label><div class="jump"><input type="number" id="jumpN" min="1" max="${TOTAL}" inputmode="numeric" placeholder="例 21"><button class="iconbtn" id="jumpGo" type="button">開く</button></div></div>
+    <div class="row"><label>学習記録を消去<small>この端末のブラウザに保存された記録です</small></label><button class="iconbtn danger" id="resetBtn" type="button">消去</button></div>
+    <div id="resetArea"></div>
+  </div>
+  <p class="fine">出典：「認定PT指定カリキュラム」（AIとの問答記録）。AIの解答が誤っていて再確認により正解が訂正された5問は除外し、54問を収録しています（うち5問は「2つ選ぶ」形式）。表記の誤りの修正や、確信度が低い問題には注記を付けています。学習記録はこの端末のブラウザにのみ保存されます。</p>`;
+  app.innerHTML=h;
+  try{$('chOrder').value=S.set.chOrder||'seq';}catch(e){}
+  app.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>startMode(b.dataset.m));
+  app.querySelectorAll('[data-ch]').forEach(b=>b.onclick=()=>{const i=+b.dataset.ch;let l=Q.filter(q=>q.c===i).map(q=>q.n);if(S.set.chOrder==='rand')l=shuffle(l);start(l,CH[i]);});
+  $('setShuffle').onchange=e=>{S.set.shuffle=e.target.checked;save();};
+  $('chOrder').onchange=e=>{S.set.chOrder=e.target.value;save();};
+  $('jumpGo').onclick=()=>{const n=parseInt($('jumpN').value,10);if(byN[n])start([n],'問'+n);else toast('1〜'+TOTAL+'の番号を入力してください');};
+  $('resetBtn').onclick=()=>{$('resetArea').innerHTML=`<div class="confirm">全ての解答記録とブックマークを消去しますか？<button class="iconbtn danger" id="resetYes" type="button">消去する</button><button class="iconbtn" id="resetNo" type="button">やめる</button></div>`;
+    $('resetYes').onclick=()=>{S.rec={};S.star={};save();home();toast('記録を消去しました');};$('resetNo').onclick=()=>$('resetArea').innerHTML='';};
+}
+function startMode(m){
+  if(m==='rand10')start(shuffle(Q).slice(0,10).map(q=>q.n),'ランダム10問');
+  if(m==='unseen')start(shuffle(unseen()).slice(0,20).map(q=>q.n),'未解答から20問');
+  if(m==='wrong')start(shuffle(wrongList()).map(q=>q.n),'間違えた問題');
+  if(m==='star')start(starList().map(q=>q.n),'ブックマーク');
+  if(m==='notes')start(noteList().map(q=>q.n),'修正・補足した問題');
+  if(m==='exam')start(shuffle(Q).slice(0,20).map(q=>q.n),'模擬テスト 20問',true);
+}
+function start(items,title,exam){
+  if(!items.length){toast('対象の問題がありません');return;}
+  const order={};items.forEach(n=>{const k=byN[n].o.map((_,i)=>i);order[n]=S.set.shuffle?shuffle(k):k;});
+  run={items,i:0,ans:{},order,title,exam:!!exam,sel:[]};homeBtn.hidden=false;show();
+}
+function record(n,correct){const r=S.rec[n]||{c:0,w:0};if(correct)r.c++;else r.w++;r.last=correct?1:0;S.rec[n]=r;save();}
+function show(){
+  const n=run.items[run.i],q=byN[n],a=run.ans[n],ord=run.order[n];
+  const answered=!!a,reveal=answered&&(!run.exam||run.done);const multi=q.a.length>1;const curSel=answered?a.pick:run.sel;
+  window.scrollTo(0,0);
+  let h=`<div class="qhead"><span class="pill num">問${n}</span><span class="ch">${esc(CH[q.c])}</span><span class="num">${run.i+1}/${run.items.length}</span></div>
+  <div class="progress"><i style="width:${(run.i+1)/run.items.length*100}%"></i></div>
+  <p class="stem">${esc(q.s)}</p>${multi&&!reveal?`<p class="multi">${q.a.length}つ選んでから「回答する」を押してください</p>`:''}<div class="opts" role="group" aria-label="選択肢">`;
+  ord.forEach((oi,pos)=>{let cls='';
+    if(reveal){if(q.a.indexOf(oi)>=0)cls='ok';else if(a.pick.indexOf(oi)>=0)cls='ng';}
+    else if(curSel.indexOf(oi)>=0)cls='sel';
+    h+=`<button class="opt ${cls}" type="button" data-oi="${oi}" aria-pressed="${curSel.indexOf(oi)>=0}" ${reveal?'disabled':''}><span class="k">${KANA[pos]}</span><span>${esc(q.o[oi])}</span></button>`;});
+  h+=`</div>`;
+  if(reveal){const ok=isOk(q,a.pick);const cl=q.a.map(x=>ord.indexOf(x)).sort().map(p=>KANA[p]).join('・');
+    h+=`<div class="verdict ${ok?'ok':'ng'}" role="status">${ok?'○ 正解':'× 不正解'}<span style="font-weight:400;color:var(--muted);font-size:14px">正解は ${cl}</span></div>
+    <div class="exp">${esc(q.e)}</div>`;
+    if(q.t)h+=`<div class="note"><b>注記</b>　${esc(q.t)}</div>`;}
+  app.innerHTML=h;
+  app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.oi));
+  const last=run.i===run.items.length-1;
+  let nextLabel=last?(run.exam&&!run.done?'採点する':'結果を見る'):'次へ';const needSubmit=multi&&!answered&&!run.exam;if(needSubmit)nextLabel='回答する';
+  barIn.innerHTML=`<button class="btn" id="prev" type="button" ${run.i?'':'disabled'}>前へ</button>
+  <button class="btn star" id="star" type="button" aria-pressed="${S.star[n]?'true':'false'}">${S.star[n]?'★ 保存済':'☆ 保存'}</button>
+  <button class="btn main" id="next" type="button" ${answered||run.exam||(needSubmit&&run.sel.length===q.a.length)?'':'disabled'}>${nextLabel}</button>`;
+  bar.hidden=false;
+  $('prev').onclick=()=>{run.i--;run.sel=[];show();};
+  $('star').onclick=()=>{if(S.star[n])delete S.star[n];else S.star[n]=1;save();show();toast(S.star[n]?'ブックマークしました':'ブックマークを外しました');};
+  $('next').onclick=()=>{if(needSubmit){run.ans[n]={pick:run.sel.slice()};record(n,isOk(q,run.sel));run.sel=[];show();return;}run.sel=[];if(!last){run.i++;show();}else if(run.exam&&!run.done){finishExam();}else result();};
+}
+function pick(oi){
+  const n=run.items[run.i],q=byN[n];
+  const multi=q.a.length>1;
+  if(multi){
+    if(run.ans[n]&&!(run.exam&&!run.done))return;
+    let cur=run.exam&&!run.done?((run.ans[n]&&run.ans[n].pick)||[]).slice():run.sel.slice();
+    const k=cur.indexOf(oi);if(k>=0)cur.splice(k,1);else{if(cur.length>=q.a.length)cur.shift();cur.push(oi);}
+    if(run.exam&&!run.done){if(cur.length)run.ans[n]={pick:cur};else delete run.ans[n];}else run.sel=cur;
+    show();return;}
+  if(run.exam&&!run.done){run.ans[n]={pick:[oi]};show();return;}
+  if(run.ans[n])return;
+  run.ans[n]={pick:[oi]};record(n,isOk(q,[oi]));show();
+}
+function finishExam(){
+  run.items.forEach(n=>{const a=run.ans[n];if(a)record(n,isOk(byN[n],a.pick));});
+  run.done=true;result();
+}
+function result(){
+  bar.hidden=true;window.scrollTo(0,0);
+  const tot=run.items.length;let ok=0,ans=0;
+  run.items.forEach(n=>{const a=run.ans[n];if(a){ans++;if(isOk(byN[n],a.pick))ok++;}});
+  let h=`<div class="score"><b>${ok}<span style="font-size:24px">/${tot}</span></b><span>${esc(run.title)}　正答率 ${tot?Math.round(ok/tot*100):0}%${ans<tot?`（未解答 ${tot-ans}問）`:''}</span></div>`;
+  // chapter breakdown for exam
+  if(run.exam){h+=`<h2>分野別の正答数</h2><ul class="list">`;
+    CH.forEach((c,i)=>{const l=run.items.filter(n=>byN[n].c===i);const k=l.filter(n=>run.ans[n]&&isOk(byN[n],run.ans[n].pick)).length;
+      if(!l.length)return;h+=`<li><button type="button" disabled style="cursor:default"><span class="m num">${i+1}</span><span class="num">${k}/${l.length}</span><span class="t">${esc(c)}</span></button></li>`;});
+    h+=`</ul>`;}
+  h+=`<h2>問題ごとの結果（タップで解説）</h2><ul class="list">`;
+  run.items.forEach((n,idx)=>{const a=run.ans[n];const k=a?(isOk(byN[n],a.pick)?'ok':'ng'):'';
+    h+=`<li><button type="button" data-idx="${idx}"><span class="m ${k}">${a?(k==='ok'?'○':'×'):'–'}</span><span class="num">問${n}</span><span class="t">${esc(byN[n].s)}</span></button></li>`;});
+  h+=`</ul><div class="modes" style="margin-top:16px;grid-template-columns:1fr 1fr">
+    <button class="mode primary" type="button" id="again"><strong>もう一度</strong><span>同じ問題を解き直す</span></button>
+    <button class="mode" type="button" id="backHome"><strong>ホームへ</strong><span>記録は保存済み</span></button></div>`;
+  app.innerHTML=h;
+  app.querySelectorAll('[data-idx]').forEach(b=>b.onclick=()=>{run.i=+b.dataset.idx;run.done=true;run.exam=run.exam;show();});
+  $('again').onclick=()=>start(run.items.slice(),run.title,run.exam);
+  $('backHome').onclick=home;
+}
+homeBtn.onclick=home;
+home();
+})();
+</script>
+
+</body></html>
